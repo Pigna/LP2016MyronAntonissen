@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LP2016MyronAntonissen
 {
-    public partial class Form1 : Form
+    public partial class VerhuurSysteem : Form
     {
-        public Form1()
+        public VerhuurSysteem()
         {
             InitializeComponent();
         }
