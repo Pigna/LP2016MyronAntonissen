@@ -30,36 +30,33 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tcLogin = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblActieRadiusBoten = new System.Windows.Forms.Label();
-            this.gbActieRadius = new System.Windows.Forms.GroupBox();
-            this.lblActieRadiusResult = new System.Windows.Forms.Label();
-            this.lbHuurcontracten = new System.Windows.Forms.ListBox();
             this.gbBudget = new System.Windows.Forms.GroupBox();
+            this.btnBudgetArtikelAf = new System.Windows.Forms.Button();
+            this.btnBudgetArtikelBij = new System.Windows.Forms.Button();
+            this.btnBudgetBootAf = new System.Windows.Forms.Button();
+            this.btnBudgetBootBij = new System.Windows.Forms.Button();
+            this.lbBudgetHuur = new System.Windows.Forms.Label();
+            this.lbBudgetTehuren = new System.Windows.Forms.Label();
+            this.lbBudgetArtikelenHuur = new System.Windows.Forms.ListBox();
+            this.lbBudgetBotenHuur = new System.Windows.Forms.ListBox();
+            this.lbBudgetArtikelen = new System.Windows.Forms.ListBox();
+            this.lbBudgetBoten = new System.Windows.Forms.ListBox();
+            this.tbBudgetBerekenen = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBudgetBerekenen = new System.Windows.Forms.Button();
             this.lblBudgetBerekenen = new System.Windows.Forms.Label();
-            this.tbBudgetBerekenen = new System.Windows.Forms.TextBox();
-            this.lbBudgetBoten = new System.Windows.Forms.ListBox();
-            this.lbBudgetArtikelen = new System.Windows.Forms.ListBox();
-            this.lbBudgetBotenHuur = new System.Windows.Forms.ListBox();
-            this.lbBudgetArtikelenHuur = new System.Windows.Forms.ListBox();
-            this.lbBudgetTehuren = new System.Windows.Forms.Label();
-            this.lbBudgetHuur = new System.Windows.Forms.Label();
-            this.btnBudgetBootBij = new System.Windows.Forms.Button();
-            this.btnBudgetBootAf = new System.Windows.Forms.Button();
-            this.btnBudgetArtikelAf = new System.Windows.Forms.Button();
-            this.btnBudgetArtikelBij = new System.Windows.Forms.Button();
-            this.gbNieuweKlant = new System.Windows.Forms.GroupBox();
+            this.gbActieRadius = new System.Windows.Forms.GroupBox();
+            this.lblActieRadiusResult = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblActieRadiusBoten = new System.Windows.Forms.Label();
+            this.cbActieRadiusBoten = new System.Windows.Forms.ComboBox();
+            this.tcLogin = new System.Windows.Forms.TabPage();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gbHuurcontract = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -68,12 +65,15 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.gbNieuweKlant = new System.Windows.Forms.GroupBox();
+            this.lbHuurcontracten = new System.Windows.Forms.ListBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.gbBudget.SuspendLayout();
+            this.gbActieRadius.SuspendLayout();
             this.tcLogin.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.gbActieRadius.SuspendLayout();
-            this.gbBudget.SuspendLayout();
             this.gbHuurcontract.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,120 +100,6 @@
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tcLogin
-            // 
-            this.tcLogin.Controls.Add(this.btnLogout);
-            this.tcLogin.Controls.Add(this.btnLogin);
-            this.tcLogin.Controls.Add(this.tbPassword);
-            this.tcLogin.Controls.Add(this.tbUsername);
-            this.tcLogin.Location = new System.Drawing.Point(4, 22);
-            this.tcLogin.Name = "tcLogin";
-            this.tcLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tcLogin.Size = new System.Drawing.Size(1152, 611);
-            this.tcLogin.TabIndex = 1;
-            this.tcLogin.Text = "Login";
-            this.tcLogin.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.gbHuurcontract);
-            this.tabPage2.Controls.Add(this.gbNieuweKlant);
-            this.tabPage2.Controls.Add(this.lbHuurcontracten);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1152, 611);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.Location = new System.Drawing.Point(31, 6);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(156, 20);
-            this.tbUsername.TabIndex = 0;
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.Location = new System.Drawing.Point(31, 32);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(156, 20);
-            this.tbPassword.TabIndex = 1;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(31, 58);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(112, 58);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(47, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(93, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lblActieRadiusBoten
-            // 
-            this.lblActieRadiusBoten.AutoSize = true;
-            this.lblActieRadiusBoten.Location = new System.Drawing.Point(6, 19);
-            this.lblActieRadiusBoten.Name = "lblActieRadiusBoten";
-            this.lblActieRadiusBoten.Size = new System.Drawing.Size(35, 13);
-            this.lblActieRadiusBoten.TabIndex = 2;
-            this.lblActieRadiusBoten.Text = "Boten";
-            // 
-            // gbActieRadius
-            // 
-            this.gbActieRadius.Controls.Add(this.lblActieRadiusResult);
-            this.gbActieRadius.Controls.Add(this.button1);
-            this.gbActieRadius.Controls.Add(this.lblActieRadiusBoten);
-            this.gbActieRadius.Controls.Add(this.comboBox1);
-            this.gbActieRadius.Location = new System.Drawing.Point(6, 6);
-            this.gbActieRadius.Name = "gbActieRadius";
-            this.gbActieRadius.Size = new System.Drawing.Size(178, 85);
-            this.gbActieRadius.TabIndex = 3;
-            this.gbActieRadius.TabStop = false;
-            this.gbActieRadius.Text = "ActieRadius";
-            // 
-            // lblActieRadiusResult
-            // 
-            this.lblActieRadiusResult.AutoSize = true;
-            this.lblActieRadiusResult.Location = new System.Drawing.Point(6, 48);
-            this.lblActieRadiusResult.Name = "lblActieRadiusResult";
-            this.lblActieRadiusResult.Size = new System.Drawing.Size(0, 13);
-            this.lblActieRadiusResult.TabIndex = 4;
-            // 
-            // lbHuurcontracten
-            // 
-            this.lbHuurcontracten.FormattingEnabled = true;
-            this.lbHuurcontracten.Location = new System.Drawing.Point(6, 6);
-            this.lbHuurcontracten.Name = "lbHuurcontracten";
-            this.lbHuurcontracten.Size = new System.Drawing.Size(223, 602);
-            this.lbHuurcontracten.TabIndex = 0;
-            // 
             // gbBudget
             // 
             this.gbBudget.Controls.Add(this.btnBudgetArtikelAf);
@@ -236,6 +122,99 @@
             this.gbBudget.TabIndex = 5;
             this.gbBudget.TabStop = false;
             this.gbBudget.Text = "Budget Berekenen";
+            // 
+            // btnBudgetArtikelAf
+            // 
+            this.btnBudgetArtikelAf.Location = new System.Drawing.Point(130, 219);
+            this.btnBudgetArtikelAf.Name = "btnBudgetArtikelAf";
+            this.btnBudgetArtikelAf.Size = new System.Drawing.Size(26, 23);
+            this.btnBudgetArtikelAf.TabIndex = 15;
+            this.btnBudgetArtikelAf.Text = "<";
+            this.btnBudgetArtikelAf.UseVisualStyleBackColor = true;
+            // 
+            // btnBudgetArtikelBij
+            // 
+            this.btnBudgetArtikelBij.Location = new System.Drawing.Point(130, 190);
+            this.btnBudgetArtikelBij.Name = "btnBudgetArtikelBij";
+            this.btnBudgetArtikelBij.Size = new System.Drawing.Size(26, 23);
+            this.btnBudgetArtikelBij.TabIndex = 14;
+            this.btnBudgetArtikelBij.Text = ">";
+            this.btnBudgetArtikelBij.UseVisualStyleBackColor = true;
+            // 
+            // btnBudgetBootAf
+            // 
+            this.btnBudgetBootAf.Location = new System.Drawing.Point(130, 116);
+            this.btnBudgetBootAf.Name = "btnBudgetBootAf";
+            this.btnBudgetBootAf.Size = new System.Drawing.Size(26, 23);
+            this.btnBudgetBootAf.TabIndex = 13;
+            this.btnBudgetBootAf.Text = "<";
+            this.btnBudgetBootAf.UseVisualStyleBackColor = true;
+            // 
+            // btnBudgetBootBij
+            // 
+            this.btnBudgetBootBij.Location = new System.Drawing.Point(130, 87);
+            this.btnBudgetBootBij.Name = "btnBudgetBootBij";
+            this.btnBudgetBootBij.Size = new System.Drawing.Size(26, 23);
+            this.btnBudgetBootBij.TabIndex = 12;
+            this.btnBudgetBootBij.Text = ">";
+            this.btnBudgetBootBij.UseVisualStyleBackColor = true;
+            // 
+            // lbBudgetHuur
+            // 
+            this.lbBudgetHuur.AutoSize = true;
+            this.lbBudgetHuur.Location = new System.Drawing.Point(159, 49);
+            this.lbBudgetHuur.Name = "lbBudgetHuur";
+            this.lbBudgetHuur.Size = new System.Drawing.Size(30, 13);
+            this.lbBudgetHuur.TabIndex = 11;
+            this.lbBudgetHuur.Text = "Huur";
+            // 
+            // lbBudgetTehuren
+            // 
+            this.lbBudgetTehuren.AutoSize = true;
+            this.lbBudgetTehuren.Location = new System.Drawing.Point(74, 49);
+            this.lbBudgetTehuren.Name = "lbBudgetTehuren";
+            this.lbBudgetTehuren.Size = new System.Drawing.Size(50, 13);
+            this.lbBudgetTehuren.TabIndex = 10;
+            this.lbBudgetTehuren.Text = "Te huren";
+            // 
+            // lbBudgetArtikelenHuur
+            // 
+            this.lbBudgetArtikelenHuur.FormattingEnabled = true;
+            this.lbBudgetArtikelenHuur.Location = new System.Drawing.Point(162, 166);
+            this.lbBudgetArtikelenHuur.Name = "lbBudgetArtikelenHuur";
+            this.lbBudgetArtikelenHuur.Size = new System.Drawing.Size(115, 95);
+            this.lbBudgetArtikelenHuur.TabIndex = 9;
+            // 
+            // lbBudgetBotenHuur
+            // 
+            this.lbBudgetBotenHuur.FormattingEnabled = true;
+            this.lbBudgetBotenHuur.Location = new System.Drawing.Point(162, 65);
+            this.lbBudgetBotenHuur.Name = "lbBudgetBotenHuur";
+            this.lbBudgetBotenHuur.Size = new System.Drawing.Size(115, 95);
+            this.lbBudgetBotenHuur.TabIndex = 8;
+            // 
+            // lbBudgetArtikelen
+            // 
+            this.lbBudgetArtikelen.FormattingEnabled = true;
+            this.lbBudgetArtikelen.Location = new System.Drawing.Point(9, 166);
+            this.lbBudgetArtikelen.Name = "lbBudgetArtikelen";
+            this.lbBudgetArtikelen.Size = new System.Drawing.Size(115, 95);
+            this.lbBudgetArtikelen.TabIndex = 7;
+            // 
+            // lbBudgetBoten
+            // 
+            this.lbBudgetBoten.FormattingEnabled = true;
+            this.lbBudgetBoten.Location = new System.Drawing.Point(9, 65);
+            this.lbBudgetBoten.Name = "lbBudgetBoten";
+            this.lbBudgetBoten.Size = new System.Drawing.Size(115, 95);
+            this.lbBudgetBoten.TabIndex = 6;
+            // 
+            // tbBudgetBerekenen
+            // 
+            this.tbBudgetBerekenen.Location = new System.Drawing.Point(53, 19);
+            this.tbBudgetBerekenen.Name = "tbBudgetBerekenen";
+            this.tbBudgetBerekenen.Size = new System.Drawing.Size(71, 20);
+            this.tbBudgetBerekenen.TabIndex = 5;
             // 
             // label1
             // 
@@ -263,107 +242,112 @@
             this.lblBudgetBerekenen.TabIndex = 2;
             this.lblBudgetBerekenen.Text = "Budget";
             // 
-            // tbBudgetBerekenen
+            // gbActieRadius
             // 
-            this.tbBudgetBerekenen.Location = new System.Drawing.Point(53, 19);
-            this.tbBudgetBerekenen.Name = "tbBudgetBerekenen";
-            this.tbBudgetBerekenen.Size = new System.Drawing.Size(71, 20);
-            this.tbBudgetBerekenen.TabIndex = 5;
+            this.gbActieRadius.Controls.Add(this.lblActieRadiusResult);
+            this.gbActieRadius.Controls.Add(this.button1);
+            this.gbActieRadius.Controls.Add(this.lblActieRadiusBoten);
+            this.gbActieRadius.Controls.Add(this.cbActieRadiusBoten);
+            this.gbActieRadius.Location = new System.Drawing.Point(6, 6);
+            this.gbActieRadius.Name = "gbActieRadius";
+            this.gbActieRadius.Size = new System.Drawing.Size(178, 85);
+            this.gbActieRadius.TabIndex = 3;
+            this.gbActieRadius.TabStop = false;
+            this.gbActieRadius.Text = "ActieRadius";
             // 
-            // lbBudgetBoten
+            // lblActieRadiusResult
             // 
-            this.lbBudgetBoten.FormattingEnabled = true;
-            this.lbBudgetBoten.Location = new System.Drawing.Point(9, 65);
-            this.lbBudgetBoten.Name = "lbBudgetBoten";
-            this.lbBudgetBoten.Size = new System.Drawing.Size(115, 95);
-            this.lbBudgetBoten.TabIndex = 6;
+            this.lblActieRadiusResult.AutoSize = true;
+            this.lblActieRadiusResult.Location = new System.Drawing.Point(6, 48);
+            this.lblActieRadiusResult.Name = "lblActieRadiusResult";
+            this.lblActieRadiusResult.Size = new System.Drawing.Size(0, 13);
+            this.lblActieRadiusResult.TabIndex = 4;
             // 
-            // lbBudgetArtikelen
+            // button1
             // 
-            this.lbBudgetArtikelen.FormattingEnabled = true;
-            this.lbBudgetArtikelen.Location = new System.Drawing.Point(9, 166);
-            this.lbBudgetArtikelen.Name = "lbBudgetArtikelen";
-            this.lbBudgetArtikelen.Size = new System.Drawing.Size(115, 95);
-            this.lbBudgetArtikelen.TabIndex = 7;
+            this.button1.Location = new System.Drawing.Point(93, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // lbBudgetBotenHuur
+            // lblActieRadiusBoten
             // 
-            this.lbBudgetBotenHuur.FormattingEnabled = true;
-            this.lbBudgetBotenHuur.Location = new System.Drawing.Point(162, 65);
-            this.lbBudgetBotenHuur.Name = "lbBudgetBotenHuur";
-            this.lbBudgetBotenHuur.Size = new System.Drawing.Size(115, 95);
-            this.lbBudgetBotenHuur.TabIndex = 8;
+            this.lblActieRadiusBoten.AutoSize = true;
+            this.lblActieRadiusBoten.Location = new System.Drawing.Point(6, 19);
+            this.lblActieRadiusBoten.Name = "lblActieRadiusBoten";
+            this.lblActieRadiusBoten.Size = new System.Drawing.Size(35, 13);
+            this.lblActieRadiusBoten.TabIndex = 2;
+            this.lblActieRadiusBoten.Text = "Boten";
             // 
-            // lbBudgetArtikelenHuur
+            // cbActieRadiusBoten
             // 
-            this.lbBudgetArtikelenHuur.FormattingEnabled = true;
-            this.lbBudgetArtikelenHuur.Location = new System.Drawing.Point(162, 166);
-            this.lbBudgetArtikelenHuur.Name = "lbBudgetArtikelenHuur";
-            this.lbBudgetArtikelenHuur.Size = new System.Drawing.Size(115, 95);
-            this.lbBudgetArtikelenHuur.TabIndex = 9;
+            this.cbActieRadiusBoten.FormattingEnabled = true;
+            this.cbActieRadiusBoten.Location = new System.Drawing.Point(47, 16);
+            this.cbActieRadiusBoten.Name = "cbActieRadiusBoten";
+            this.cbActieRadiusBoten.Size = new System.Drawing.Size(121, 21);
+            this.cbActieRadiusBoten.TabIndex = 0;
             // 
-            // lbBudgetTehuren
+            // tcLogin
             // 
-            this.lbBudgetTehuren.AutoSize = true;
-            this.lbBudgetTehuren.Location = new System.Drawing.Point(74, 49);
-            this.lbBudgetTehuren.Name = "lbBudgetTehuren";
-            this.lbBudgetTehuren.Size = new System.Drawing.Size(50, 13);
-            this.lbBudgetTehuren.TabIndex = 10;
-            this.lbBudgetTehuren.Text = "Te huren";
+            this.tcLogin.Controls.Add(this.btnLogout);
+            this.tcLogin.Controls.Add(this.btnLogin);
+            this.tcLogin.Controls.Add(this.tbPassword);
+            this.tcLogin.Controls.Add(this.tbUsername);
+            this.tcLogin.Location = new System.Drawing.Point(4, 22);
+            this.tcLogin.Name = "tcLogin";
+            this.tcLogin.Padding = new System.Windows.Forms.Padding(3);
+            this.tcLogin.Size = new System.Drawing.Size(1152, 611);
+            this.tcLogin.TabIndex = 1;
+            this.tcLogin.Text = "Login";
+            this.tcLogin.UseVisualStyleBackColor = true;
             // 
-            // lbBudgetHuur
+            // btnLogout
             // 
-            this.lbBudgetHuur.AutoSize = true;
-            this.lbBudgetHuur.Location = new System.Drawing.Point(159, 49);
-            this.lbBudgetHuur.Name = "lbBudgetHuur";
-            this.lbBudgetHuur.Size = new System.Drawing.Size(30, 13);
-            this.lbBudgetHuur.TabIndex = 11;
-            this.lbBudgetHuur.Text = "Huur";
+            this.btnLogout.Location = new System.Drawing.Point(112, 58);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 3;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
             // 
-            // btnBudgetBootBij
+            // btnLogin
             // 
-            this.btnBudgetBootBij.Location = new System.Drawing.Point(130, 87);
-            this.btnBudgetBootBij.Name = "btnBudgetBootBij";
-            this.btnBudgetBootBij.Size = new System.Drawing.Size(26, 23);
-            this.btnBudgetBootBij.TabIndex = 12;
-            this.btnBudgetBootBij.Text = ">";
-            this.btnBudgetBootBij.UseVisualStyleBackColor = true;
+            this.btnLogin.Location = new System.Drawing.Point(31, 58);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnBudgetBootAf
+            // tbPassword
             // 
-            this.btnBudgetBootAf.Location = new System.Drawing.Point(130, 116);
-            this.btnBudgetBootAf.Name = "btnBudgetBootAf";
-            this.btnBudgetBootAf.Size = new System.Drawing.Size(26, 23);
-            this.btnBudgetBootAf.TabIndex = 13;
-            this.btnBudgetBootAf.Text = "<";
-            this.btnBudgetBootAf.UseVisualStyleBackColor = true;
+            this.tbPassword.Location = new System.Drawing.Point(31, 32);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(156, 20);
+            this.tbPassword.TabIndex = 1;
             // 
-            // btnBudgetArtikelAf
+            // tbUsername
             // 
-            this.btnBudgetArtikelAf.Location = new System.Drawing.Point(130, 219);
-            this.btnBudgetArtikelAf.Name = "btnBudgetArtikelAf";
-            this.btnBudgetArtikelAf.Size = new System.Drawing.Size(26, 23);
-            this.btnBudgetArtikelAf.TabIndex = 15;
-            this.btnBudgetArtikelAf.Text = "<";
-            this.btnBudgetArtikelAf.UseVisualStyleBackColor = true;
+            this.tbUsername.Location = new System.Drawing.Point(31, 6);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(156, 20);
+            this.tbUsername.TabIndex = 0;
             // 
-            // btnBudgetArtikelBij
+            // tabPage2
             // 
-            this.btnBudgetArtikelBij.Location = new System.Drawing.Point(130, 190);
-            this.btnBudgetArtikelBij.Name = "btnBudgetArtikelBij";
-            this.btnBudgetArtikelBij.Size = new System.Drawing.Size(26, 23);
-            this.btnBudgetArtikelBij.TabIndex = 14;
-            this.btnBudgetArtikelBij.Text = ">";
-            this.btnBudgetArtikelBij.UseVisualStyleBackColor = true;
-            // 
-            // gbNieuweKlant
-            // 
-            this.gbNieuweKlant.Location = new System.Drawing.Point(235, 6);
-            this.gbNieuweKlant.Name = "gbNieuweKlant";
-            this.gbNieuweKlant.Size = new System.Drawing.Size(417, 166);
-            this.gbNieuweKlant.TabIndex = 1;
-            this.gbNieuweKlant.TabStop = false;
-            this.gbNieuweKlant.Text = "Nieuwe Klant";
+            this.tabPage2.Controls.Add(this.gbHuurcontract);
+            this.tabPage2.Controls.Add(this.gbNieuweKlant);
+            this.tabPage2.Controls.Add(this.lbHuurcontracten);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1152, 611);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // gbHuurcontract
             // 
@@ -382,14 +366,6 @@
             this.gbHuurcontract.TabIndex = 2;
             this.gbHuurcontract.TabStop = false;
             this.gbHuurcontract.Text = "Nieuw Huurcontract";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(115, 21);
-            this.comboBox2.TabIndex = 1;
             // 
             // button2
             // 
@@ -459,6 +435,31 @@
             this.listBox4.Size = new System.Drawing.Size(115, 95);
             this.listBox4.TabIndex = 16;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 19);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(115, 21);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // gbNieuweKlant
+            // 
+            this.gbNieuweKlant.Location = new System.Drawing.Point(235, 6);
+            this.gbNieuweKlant.Name = "gbNieuweKlant";
+            this.gbNieuweKlant.Size = new System.Drawing.Size(417, 166);
+            this.gbNieuweKlant.TabIndex = 1;
+            this.gbNieuweKlant.TabStop = false;
+            this.gbNieuweKlant.Text = "Nieuwe Klant";
+            // 
+            // lbHuurcontracten
+            // 
+            this.lbHuurcontracten.FormattingEnabled = true;
+            this.lbHuurcontracten.Location = new System.Drawing.Point(6, 6);
+            this.lbHuurcontracten.Name = "lbHuurcontracten";
+            this.lbHuurcontracten.Size = new System.Drawing.Size(223, 602);
+            this.lbHuurcontracten.TabIndex = 0;
+            // 
             // VerhuurSysteem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,13 +470,13 @@
             this.Text = "VerhuurSysteem | t Sloepke";
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.gbBudget.ResumeLayout(false);
+            this.gbBudget.PerformLayout();
+            this.gbActieRadius.ResumeLayout(false);
+            this.gbActieRadius.PerformLayout();
             this.tcLogin.ResumeLayout(false);
             this.tcLogin.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.gbActieRadius.ResumeLayout(false);
-            this.gbActieRadius.PerformLayout();
-            this.gbBudget.ResumeLayout(false);
-            this.gbBudget.PerformLayout();
             this.gbHuurcontract.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -510,7 +511,7 @@
         private System.Windows.Forms.Label lblActieRadiusResult;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblActieRadiusBoten;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbActieRadiusBoten;
         private System.Windows.Forms.ListBox lbHuurcontracten;
         private System.Windows.Forms.GroupBox gbNieuweKlant;
         private System.Windows.Forms.GroupBox gbHuurcontract;

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,9 @@
     <Compile Include="Artikel.cs" />
     <Compile Include="Beheerder.cs" />
     <Compile Include="Boot.cs" />
+    <Compile Include="Database\DBAccount.cs" />
+    <Compile Include="Database\DBBoot.cs" />
+    <Compile Include="Database\DBContext.cs" />
     <Compile Include="Huurcontract.cs" />
     <Compile Include="Klant.cs" />
     <Compile Include="Motor.cs" />
@@ -76,6 +80,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
