@@ -11,6 +11,7 @@ namespace LP2016MyronAntonissen
         public int Id { get; set; }
         public string Naam { get; set; }
         public double Prijs { get; set; }
+        public string Type { get; set; }
         public List<Water> Wateren { get; set; }
 
         public Boot(string naam, double prijs)
