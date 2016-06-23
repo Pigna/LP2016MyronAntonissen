@@ -19,10 +19,12 @@ namespace LP2016MyronAntonissen
         public VerhuurSysteem()
         {
             InitializeComponent();
-
+            btnLogout.Enabled = false;
+            DisableTabs();
             foreach (Boot boot in dbBoot.GetAllBoot())
             {
-                cbActieRadiusBoten.Items.Add(boot);
+                if(boot.GetType() == typeof(Motor))
+                    cbActieRadiusBoten.Items.Add(boot);
             }
         }
 
@@ -32,9 +34,16 @@ namespace LP2016MyronAntonissen
             string password = tbPassword.Text.Trim();
             if (username != "" && password != "") //velden niet leeg
             {
-                if (dbAccount.LoginCheck(username, password))
+                int accountid = dbAccount.LoginCheck(username, password);
+                if (accountid > 0)
                 {
-                    //put loggedin user into variable
+                    LoggedInUser = dbAccount.GetAccountById(accountid);
+                    //enable tabs
+                    EnableTabs();
+                    btnLogin.Enabled = false;
+                    btnLogout.Enabled = true;
+                    tbUsername.Text = "";
+                    tbPassword.Text = "";
                 }
                 else
                 {
@@ -45,6 +54,31 @@ namespace LP2016MyronAntonissen
             {
                 MessageBox.Show("Vul een gebruikersnaam en wachtwoord in.");
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoggedInUser = null;
+            //disable tabs
+            DisableTabs();
+            btnLogin.Enabled = true;
+            btnLogout.Enabled = false;
+        }
+
+        private void DisableTabs()
+        {
+            tabControl.TabPages.Remove(tpMedewerker);
+        }
+
+        private void EnableTabs()
+        {
+            tabControl.TabPages.Add(tpMedewerker);
+        }
+
+        private void btnGetRadius_Click(object sender, EventArgs e)
+        {
+            Motor boot = (Motor)cbActieRadiusBoten.SelectedItem;
+            lblActieRadiusResult.Text = boot.ActieRadius.ToString() + " km";
         }
     }
 }

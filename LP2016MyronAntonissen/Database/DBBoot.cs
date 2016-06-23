@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.OracleClient;
+using Oracle.ManagedDataAccess.Client;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,24 +19,25 @@ namespace LP2016MyronAntonissen.Database
             OracleCommand cmd = new OracleCommand
             {
                 Connection = con,
-                CommandText = "SELECT * FROM Boot"
+                CommandText = "SELECT boot.id, boot.naam, soort.naam, soort.prijs, motor.tankinhoud FROM BOOT JOIN SOORT ON boot.soortid = soort.id LEFT JOIN MOTOR ON boot.motorid = motor.id"
             };
             OracleDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 int id = (dr.GetInt32(0));
                 string naam = (dr.GetString(1));
-                int typeid = (dr.GetInt32(2));
-                int soortid = (dr.GetInt32(4));
-                if (dr.GetValue(3) != System.DBNull.Value)
+                string soortnaam = (dr.GetString(2));
+                double soortprijs = (dr.GetDouble(3));
+                if (soortnaam == "Motor")
                 {
-                    int motorid = (dr.GetInt32(3));
-                    Boot dbPlaylistItem = new Motor();
+                    int tankinhoud = (dr.GetInt32(4));
+                    Boot dbPlaylistItem = new Motor(id, naam, soortprijs, tankinhoud);
                     ret.Add(dbPlaylistItem);
                 }
+
                 else
                 {
-                    Boot dbPlaylistItem = new Spierkracht();
+                    Boot dbPlaylistItem = new Spierkracht(id, naam, soortprijs);
                     ret.Add(dbPlaylistItem);
                 }
             }
@@ -55,13 +56,13 @@ namespace LP2016MyronAntonissen.Database
                 Connection = con,
                 CommandText = "SELECT * FROM Boot"
             };
-            cmd.Parameters.AddWithValue("@userid", " variable");
+            cmd.Parameters.Add("@userid", " variable");
             OracleDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 int id = (dr.GetInt32(0));
                 string naam = (dr.GetString(1));
-                Boot dbPlaylistItem = new Motor();
+                Boot dbPlaylistItem = null;
                 ret.Add(dbPlaylistItem);
             }
             con.Close();
@@ -78,8 +79,8 @@ namespace LP2016MyronAntonissen.Database
                 Connection = con,
                 CommandText = "INSERT INTO Playlist (Name, Userid) VALUES (@name, @userid)"
             };
-            cmd.Parameters.AddWithValue("@name", boot);
-            cmd.Parameters.AddWithValue("@userid", boot);
+            cmd.Parameters.Add("@name", boot);
+            cmd.Parameters.Add("@userid", boot);
 
             cmd.ExecuteNonQuery();
             con.Close();

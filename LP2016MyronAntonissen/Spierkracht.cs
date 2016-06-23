@@ -8,5 +8,13 @@ namespace LP2016MyronAntonissen
 {
     class Spierkracht : Boot
     {
+        public Spierkracht(int id, string naam, double prijs) : base(naam, prijs)
+        {
+
+        }
+        public Spierkracht(string naam, double prijs) : base(naam, prijs)
+        {
+            
+        }
     }
 }

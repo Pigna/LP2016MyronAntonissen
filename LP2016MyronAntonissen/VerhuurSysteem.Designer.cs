@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tpHome = new System.Windows.Forms.TabPage();
             this.gbBudget = new System.Windows.Forms.GroupBox();
             this.btnBudgetArtikelAf = new System.Windows.Forms.Button();
             this.btnBudgetArtikelBij = new System.Windows.Forms.Button();
@@ -47,15 +47,15 @@
             this.lblBudgetBerekenen = new System.Windows.Forms.Label();
             this.gbActieRadius = new System.Windows.Forms.GroupBox();
             this.lblActieRadiusResult = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGetRadius = new System.Windows.Forms.Button();
             this.lblActieRadiusBoten = new System.Windows.Forms.Label();
             this.cbActieRadiusBoten = new System.Windows.Forms.ComboBox();
-            this.tcLogin = new System.Windows.Forms.TabPage();
+            this.tpLogin = new System.Windows.Forms.TabPage();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tpMedewerker = new System.Windows.Forms.TabPage();
             this.gbHuurcontract = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,36 +69,36 @@
             this.gbNieuweKlant = new System.Windows.Forms.GroupBox();
             this.lbHuurcontracten = new System.Windows.Forms.ListBox();
             this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tpHome.SuspendLayout();
             this.gbBudget.SuspendLayout();
             this.gbActieRadius.SuspendLayout();
-            this.tcLogin.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tpLogin.SuspendLayout();
+            this.tpMedewerker.SuspendLayout();
             this.gbHuurcontract.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tcLogin);
-            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tpHome);
+            this.tabControl.Controls.Add(this.tpLogin);
+            this.tabControl.Controls.Add(this.tpMedewerker);
             this.tabControl.Location = new System.Drawing.Point(12, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1160, 637);
             this.tabControl.TabIndex = 0;
             // 
-            // tabPage1
+            // tpHome
             // 
-            this.tabPage1.Controls.Add(this.gbBudget);
-            this.tabPage1.Controls.Add(this.gbActieRadius);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1152, 611);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Home";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpHome.Controls.Add(this.gbBudget);
+            this.tpHome.Controls.Add(this.gbActieRadius);
+            this.tpHome.Location = new System.Drawing.Point(4, 22);
+            this.tpHome.Name = "tpHome";
+            this.tpHome.Padding = new System.Windows.Forms.Padding(3);
+            this.tpHome.Size = new System.Drawing.Size(1152, 611);
+            this.tpHome.TabIndex = 0;
+            this.tpHome.Text = "Home";
+            this.tpHome.UseVisualStyleBackColor = true;
             // 
             // gbBudget
             // 
@@ -245,7 +245,7 @@
             // gbActieRadius
             // 
             this.gbActieRadius.Controls.Add(this.lblActieRadiusResult);
-            this.gbActieRadius.Controls.Add(this.button1);
+            this.gbActieRadius.Controls.Add(this.btnGetRadius);
             this.gbActieRadius.Controls.Add(this.lblActieRadiusBoten);
             this.gbActieRadius.Controls.Add(this.cbActieRadiusBoten);
             this.gbActieRadius.Location = new System.Drawing.Point(6, 6);
@@ -263,14 +263,15 @@
             this.lblActieRadiusResult.Size = new System.Drawing.Size(0, 13);
             this.lblActieRadiusResult.TabIndex = 4;
             // 
-            // button1
+            // btnGetRadius
             // 
-            this.button1.Location = new System.Drawing.Point(93, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGetRadius.Location = new System.Drawing.Point(93, 43);
+            this.btnGetRadius.Name = "btnGetRadius";
+            this.btnGetRadius.Size = new System.Drawing.Size(75, 23);
+            this.btnGetRadius.TabIndex = 1;
+            this.btnGetRadius.Text = "ActieRadius";
+            this.btnGetRadius.UseVisualStyleBackColor = true;
+            this.btnGetRadius.Click += new System.EventHandler(this.btnGetRadius_Click);
             // 
             // lblActieRadiusBoten
             // 
@@ -289,19 +290,19 @@
             this.cbActieRadiusBoten.Size = new System.Drawing.Size(121, 21);
             this.cbActieRadiusBoten.TabIndex = 0;
             // 
-            // tcLogin
+            // tpLogin
             // 
-            this.tcLogin.Controls.Add(this.btnLogout);
-            this.tcLogin.Controls.Add(this.btnLogin);
-            this.tcLogin.Controls.Add(this.tbPassword);
-            this.tcLogin.Controls.Add(this.tbUsername);
-            this.tcLogin.Location = new System.Drawing.Point(4, 22);
-            this.tcLogin.Name = "tcLogin";
-            this.tcLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tcLogin.Size = new System.Drawing.Size(1152, 611);
-            this.tcLogin.TabIndex = 1;
-            this.tcLogin.Text = "Login";
-            this.tcLogin.UseVisualStyleBackColor = true;
+            this.tpLogin.Controls.Add(this.btnLogout);
+            this.tpLogin.Controls.Add(this.btnLogin);
+            this.tpLogin.Controls.Add(this.tbPassword);
+            this.tpLogin.Controls.Add(this.tbUsername);
+            this.tpLogin.Location = new System.Drawing.Point(4, 22);
+            this.tpLogin.Name = "tpLogin";
+            this.tpLogin.Padding = new System.Windows.Forms.Padding(3);
+            this.tpLogin.Size = new System.Drawing.Size(1152, 611);
+            this.tpLogin.TabIndex = 1;
+            this.tpLogin.Text = "Login";
+            this.tpLogin.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
@@ -311,6 +312,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnLogin
             // 
@@ -336,18 +338,18 @@
             this.tbUsername.Size = new System.Drawing.Size(156, 20);
             this.tbUsername.TabIndex = 0;
             // 
-            // tabPage2
+            // tpMedewerker
             // 
-            this.tabPage2.Controls.Add(this.gbHuurcontract);
-            this.tabPage2.Controls.Add(this.gbNieuweKlant);
-            this.tabPage2.Controls.Add(this.lbHuurcontracten);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1152, 611);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tpMedewerker.Controls.Add(this.gbHuurcontract);
+            this.tpMedewerker.Controls.Add(this.gbNieuweKlant);
+            this.tpMedewerker.Controls.Add(this.lbHuurcontracten);
+            this.tpMedewerker.Location = new System.Drawing.Point(4, 22);
+            this.tpMedewerker.Name = "tpMedewerker";
+            this.tpMedewerker.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMedewerker.Size = new System.Drawing.Size(1152, 611);
+            this.tpMedewerker.TabIndex = 2;
+            this.tpMedewerker.Text = "Medewerker";
+            this.tpMedewerker.UseVisualStyleBackColor = true;
             // 
             // gbHuurcontract
             // 
@@ -469,14 +471,14 @@
             this.Name = "VerhuurSysteem";
             this.Text = "VerhuurSysteem | t Sloepke";
             this.tabControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tpHome.ResumeLayout(false);
             this.gbBudget.ResumeLayout(false);
             this.gbBudget.PerformLayout();
             this.gbActieRadius.ResumeLayout(false);
             this.gbActieRadius.PerformLayout();
-            this.tcLogin.ResumeLayout(false);
-            this.tcLogin.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.tpLogin.ResumeLayout(false);
+            this.tpLogin.PerformLayout();
+            this.tpMedewerker.ResumeLayout(false);
             this.gbHuurcontract.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -485,13 +487,13 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tcLogin;
+        private System.Windows.Forms.TabPage tpHome;
+        private System.Windows.Forms.TabPage tpLogin;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tpMedewerker;
         private System.Windows.Forms.GroupBox gbBudget;
         private System.Windows.Forms.Button btnBudgetArtikelAf;
         private System.Windows.Forms.Button btnBudgetArtikelBij;
@@ -509,7 +511,7 @@
         private System.Windows.Forms.Label lblBudgetBerekenen;
         private System.Windows.Forms.GroupBox gbActieRadius;
         private System.Windows.Forms.Label lblActieRadiusResult;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGetRadius;
         private System.Windows.Forms.Label lblActieRadiusBoten;
         private System.Windows.Forms.ComboBox cbActieRadiusBoten;
         private System.Windows.Forms.ListBox lbHuurcontracten;

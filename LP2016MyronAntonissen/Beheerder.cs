@@ -8,7 +8,7 @@ namespace LP2016MyronAntonissen
 {
     class Beheerder : Account
     {
-        public Beheerder(int id, string naam):base(id, naam)
+        public Beheerder(int id, string naam, string email):base(id, naam, email)
         {
 
         }

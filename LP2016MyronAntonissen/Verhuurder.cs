@@ -8,7 +8,7 @@ namespace LP2016MyronAntonissen
 {
     class Verhuurder : Account
     {
-        public Verhuurder(int id, string naam):base(id, naam)
+        public Verhuurder(int id, string naam, string email):base(id, naam, email)
         {
             
         }
