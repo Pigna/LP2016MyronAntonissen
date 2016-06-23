@@ -24,5 +24,10 @@ namespace LP2016MyronAntonissen
             Naam = naam;
             Prijs = prijs;
         }
+
+        public override string ToString()
+        {
+            return Naam + " " + Prijs;
+        }
     }
 }

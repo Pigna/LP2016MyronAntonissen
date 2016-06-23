@@ -68,6 +68,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.gbNieuweKlant = new System.Windows.Forms.GroupBox();
             this.lbHuurcontracten = new System.Windows.Forms.ListBox();
+            this.cbBudgetWater = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.tpHome.SuspendLayout();
             this.gbBudget.SuspendLayout();
@@ -102,6 +103,7 @@
             // 
             // gbBudget
             // 
+            this.gbBudget.Controls.Add(this.cbBudgetWater);
             this.gbBudget.Controls.Add(this.btnBudgetArtikelAf);
             this.gbBudget.Controls.Add(this.btnBudgetArtikelBij);
             this.gbBudget.Controls.Add(this.btnBudgetBootAf);
@@ -131,6 +133,7 @@
             this.btnBudgetArtikelAf.TabIndex = 15;
             this.btnBudgetArtikelAf.Text = "<";
             this.btnBudgetArtikelAf.UseVisualStyleBackColor = true;
+            this.btnBudgetArtikelAf.Click += new System.EventHandler(this.btnBudgetArtikelAf_Click);
             // 
             // btnBudgetArtikelBij
             // 
@@ -140,6 +143,7 @@
             this.btnBudgetArtikelBij.TabIndex = 14;
             this.btnBudgetArtikelBij.Text = ">";
             this.btnBudgetArtikelBij.UseVisualStyleBackColor = true;
+            this.btnBudgetArtikelBij.Click += new System.EventHandler(this.btnBudgetArtikelBij_Click);
             // 
             // btnBudgetBootAf
             // 
@@ -149,6 +153,7 @@
             this.btnBudgetBootAf.TabIndex = 13;
             this.btnBudgetBootAf.Text = "<";
             this.btnBudgetBootAf.UseVisualStyleBackColor = true;
+            this.btnBudgetBootAf.Click += new System.EventHandler(this.btnBudgetBootAf_Click);
             // 
             // btnBudgetBootBij
             // 
@@ -158,6 +163,7 @@
             this.btnBudgetBootBij.TabIndex = 12;
             this.btnBudgetBootBij.Text = ">";
             this.btnBudgetBootBij.UseVisualStyleBackColor = true;
+            this.btnBudgetBootBij.Click += new System.EventHandler(this.btnBudgetBootBij_Click);
             // 
             // lbBudgetHuur
             // 
@@ -232,6 +238,7 @@
             this.btnBudgetBerekenen.TabIndex = 1;
             this.btnBudgetBerekenen.Text = "Bereken";
             this.btnBudgetBerekenen.UseVisualStyleBackColor = true;
+            this.btnBudgetBerekenen.Click += new System.EventHandler(this.btnBudgetBerekenen_Click);
             // 
             // lblBudgetBerekenen
             // 
@@ -462,6 +469,17 @@
             this.lbHuurcontracten.Size = new System.Drawing.Size(223, 602);
             this.lbHuurcontracten.TabIndex = 0;
             // 
+            // cbBudgetWater
+            // 
+            this.cbBudgetWater.FormattingEnabled = true;
+            this.cbBudgetWater.Items.AddRange(new object[] {
+            "Noordzee",
+            "IJsselmeer"});
+            this.cbBudgetWater.Location = new System.Drawing.Point(162, 19);
+            this.cbBudgetWater.Name = "cbBudgetWater";
+            this.cbBudgetWater.Size = new System.Drawing.Size(115, 21);
+            this.cbBudgetWater.TabIndex = 16;
+            // 
             // VerhuurSysteem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,6 +544,7 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ComboBox cbBudgetWater;
     }
 }
 

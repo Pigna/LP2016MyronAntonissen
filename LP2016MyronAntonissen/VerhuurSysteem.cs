@@ -15,16 +15,23 @@ namespace LP2016MyronAntonissen
     {
         private Account LoggedInUser;
         DBBoot dbBoot = new DBBoot();
+        DBArtikel dbArtikel = new DBArtikel();
         DBAccount dbAccount = new DBAccount();
         public VerhuurSysteem()
         {
             InitializeComponent();
             btnLogout.Enabled = false;
             DisableTabs();
+            //Fills interface with data
             foreach (Boot boot in dbBoot.GetAllBoot())
             {
+                lbBudgetBoten.Items.Add(boot);
                 if(boot.GetType() == typeof(Motor))
                     cbActieRadiusBoten.Items.Add(boot);
+            }
+            foreach (Artikel artikel in dbArtikel.GetAllArtikel())
+            {
+                lbBudgetArtikelen.Items.Add(artikel);
             }
         }
 
@@ -79,6 +86,73 @@ namespace LP2016MyronAntonissen
         {
             Motor boot = (Motor)cbActieRadiusBoten.SelectedItem;
             lblActieRadiusResult.Text = boot.ActieRadius.ToString() + " km";
+        }
+
+        private void btnBudgetBootBij_Click(object sender, EventArgs e)
+        {
+            if (lbBudgetBoten.SelectedItem != null)
+            {
+                Boot selectedBoot = (Boot) lbBudgetBoten.SelectedItem;
+                lbBudgetBotenHuur.Items.Add(selectedBoot);
+                lbBudgetBoten.Items.Remove(selectedBoot);
+            }
+        }
+
+        private void btnBudgetBootAf_Click(object sender, EventArgs e)
+        {
+            if (lbBudgetBotenHuur.SelectedItem != null)
+            {
+                Boot selectedBoot = (Boot)lbBudgetBotenHuur.SelectedItem;
+                lbBudgetBoten.Items.Add(selectedBoot);
+                lbBudgetBotenHuur.Items.Remove(selectedBoot);
+            }
+        }
+
+        private void btnBudgetArtikelBij_Click(object sender, EventArgs e)
+        {
+            if (lbBudgetArtikelen.SelectedItem != null)
+            {
+                Artikel selectedArtikel = (Artikel)lbBudgetArtikelen.SelectedItem;
+                lbBudgetArtikelenHuur.Items.Add(selectedArtikel);
+                lbBudgetArtikelen.Items.Remove(selectedArtikel);
+            }
+        }
+
+        private void btnBudgetArtikelAf_Click(object sender, EventArgs e)
+        {
+            if(lbBudgetArtikelenHuur.SelectedItem != null)
+            {
+                Artikel selectedArtikel = (Artikel)lbBudgetArtikelenHuur.SelectedItem;
+                lbBudgetArtikelen.Items.Add(selectedArtikel);
+                lbBudgetArtikelenHuur.Items.Remove(selectedArtikel);
+            }
+        }
+
+        private void btnBudgetBerekenen_Click(object sender, EventArgs e)
+        {
+            BudgetController Budget = new BudgetController();
+
+            double budget = 0.0;
+            double.TryParse(tbBudgetBerekenen.Text.Trim(), out budget);
+            if (budget > 0)
+            {
+                List<Boot> bootHuurLijst = new List<Boot>();
+                foreach (var boot in lbBudgetBotenHuur.Items)
+                {
+                    bootHuurLijst.Add((Boot) boot);
+                }
+                List<Artikel> artikelHuurLijst = new List<Artikel>();
+                foreach (var artikel in lbBudgetArtikelenHuur.Items)
+                {
+                    artikelHuurLijst.Add((Artikel) artikel);
+                }
+                Budget.BerekenAantalMeren(budget, bootHuurLijst, artikelHuurLijst, )
+            }
+            else
+            {
+                MessageBox.Show("Vul een waarde in die voldoet aan [nn.nn]");
+            }
+
         }
     }
 }
