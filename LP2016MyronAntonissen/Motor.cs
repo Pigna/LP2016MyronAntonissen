@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LP2016MyronAntonissen
 {
-    class Motor : Boot
+    public class Motor : Boot
     {
         public int Tankinhoud { get; set; }
 

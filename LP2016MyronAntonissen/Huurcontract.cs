@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LP2016MyronAntonissen
 {
-    class Huurcontract
+    public class Huurcontract
     {
         public int Id { get; set; }
         public DateTime Vanaf { get; set; }

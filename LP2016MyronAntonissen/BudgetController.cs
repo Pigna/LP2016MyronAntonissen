@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LP2016MyronAntonissen
 {
-    class BudgetController
+    public class BudgetController
     {
         public int BerekenAantalMeren(double budget, List<Boot> boten, List<Artikel> artikels, string water)
         {

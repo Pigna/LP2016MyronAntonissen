@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LP2016MyronAntonissen
 {
-    abstract class Account
+    public abstract class Account
     {
         public int Id { get; set; }
         public string Naam { get; set; }

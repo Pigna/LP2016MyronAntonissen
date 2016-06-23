@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LP2016MyronAntonissen
 {
-    class Spierkracht : Boot
+    public class Spierkracht : Boot
     {
         public Spierkracht(int id, string naam, double prijs) : base(naam, prijs)
         {

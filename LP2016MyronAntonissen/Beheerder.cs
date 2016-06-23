@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LP2016MyronAntonissen
 {
-    class Beheerder : Account
+    public class Beheerder : Account
     {
         public Beheerder(int id, string naam, string email):base(id, naam, email)
         {

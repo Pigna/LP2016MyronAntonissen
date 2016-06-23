@@ -7,7 +7,7 @@ using LP2016MyronAntonissen.Database;
 
 namespace LP2016MyronAntonissen
 {
-    class Verhuurder : Account
+    public class Verhuurder : Account
     {
         public Verhuurder(int id, string naam, string email):base(id, naam, email)
         {

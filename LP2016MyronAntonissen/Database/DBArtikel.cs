@@ -7,7 +7,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace LP2016MyronAntonissen.Database
 {
-    class DBArtikel : DBContext
+    public class DBArtikel : DBContext
     {
         public List<Artikel> GetAllArtikel()
         {

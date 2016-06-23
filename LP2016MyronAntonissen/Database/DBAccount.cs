@@ -8,7 +8,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace LP2016MyronAntonissen.Database
 {
-    class DBAccount : DBContext
+    public class DBAccount : DBContext
     {
         public int LoginCheck(string username, string password)
         {

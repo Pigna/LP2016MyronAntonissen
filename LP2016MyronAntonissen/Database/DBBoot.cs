@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LP2016MyronAntonissen.Database
 {
-    class DBBoot : DBContext
+    public class DBBoot : DBContext
     {
         public List<Boot> GetAllBoot() //name of ur query
         {
@@ -40,30 +40,6 @@ namespace LP2016MyronAntonissen.Database
                     Boot dbPlaylistItem = new Spierkracht(id, naam, soortprijs);
                     ret.Add(dbPlaylistItem);
                 }
-            }
-            con.Close();
-            return ret;
-        }
-        public List<Boot> notusedyet() //name of ur query
-        {
-            List<Boot> ret = new List<Boot>();
-            if (con.State != System.Data.ConnectionState.Open)
-            {
-                con.Open();
-            }
-            OracleCommand cmd = new OracleCommand
-            {
-                Connection = con,
-                CommandText = "SELECT * FROM Boot"
-            };
-            cmd.Parameters.Add("@userid", " variable");
-            OracleDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                int id = (dr.GetInt32(0));
-                string naam = (dr.GetString(1));
-                Boot dbPlaylistItem = null;
-                ret.Add(dbPlaylistItem);
             }
             con.Close();
             return ret;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LP2016MyronAntonissen.Database
 {
-    class DBContext
+    public class DBContext
     {
         //fields
         protected OracleConnection con = new OracleConnection();

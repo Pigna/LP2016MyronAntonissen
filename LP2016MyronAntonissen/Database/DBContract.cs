@@ -8,7 +8,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace LP2016MyronAntonissen.Database
 {
-    class DBContract : DBContext
+    public class DBContract : DBContext
     {
         public List<Huurcontract> GetAllContract() //name of ur query
         {
