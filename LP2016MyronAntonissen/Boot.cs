@@ -27,7 +27,7 @@ namespace LP2016MyronAntonissen
 
         public override string ToString()
         {
-            return Naam + " " + Prijs;
+            return Naam + " €" + Prijs;
         }
     }
 }

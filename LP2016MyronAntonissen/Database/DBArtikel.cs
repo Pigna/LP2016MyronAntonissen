@@ -19,7 +19,7 @@ namespace LP2016MyronAntonissen.Database
             OracleCommand cmd = new OracleCommand
             {
                 Connection = con,
-                CommandText = "SELECT ARTIKEL.ID, naam, prijs FROM ARTIKEL LEFT JOIN TYPE_ARTIKEL ON TYPE_ARTIKEL.ID = ARTIKEL.ID"
+                CommandText = "SELECT ARTIKEL.ID, naam, prijs FROM ARTIKEL INNER JOIN TYPE_ARTIKEL ON TYPE_ARTIKEL.ID = ARTIKEL.ID"
             };
             OracleDataReader dr = cmd.ExecuteReader();
             while (dr.Read())

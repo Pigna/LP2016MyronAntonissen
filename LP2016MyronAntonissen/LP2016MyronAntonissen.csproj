@@ -57,6 +57,7 @@
     <Compile Include="Database\DBArtikel.cs" />
     <Compile Include="Database\DBBoot.cs" />
     <Compile Include="Database\DBContext.cs" />
+    <Compile Include="Database\DBContract.cs" />
     <Compile Include="Huurcontract.cs" />
     <Compile Include="Klant.cs" />
     <Compile Include="Motor.cs" />

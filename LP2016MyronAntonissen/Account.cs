@@ -17,5 +17,6 @@ namespace LP2016MyronAntonissen
             Naam = naam;
             Email = email;
         }
+
     }
 }

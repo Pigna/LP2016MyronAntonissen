@@ -26,7 +26,7 @@ namespace LP2016MyronAntonissen
 
         public override string ToString()
         {
-            return base.ToString() + " " + Tankinhoud;
+            return base.ToString() + " " + Tankinhoud+"L";
         }
     }
 }

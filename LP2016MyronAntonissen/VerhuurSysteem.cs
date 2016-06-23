@@ -17,6 +17,8 @@ namespace LP2016MyronAntonissen
         DBBoot dbBoot = new DBBoot();
         DBArtikel dbArtikel = new DBArtikel();
         DBAccount dbAccount = new DBAccount();
+        DBContract dbContract = new DBContract();
+
         public VerhuurSysteem()
         {
             InitializeComponent();
@@ -26,12 +28,14 @@ namespace LP2016MyronAntonissen
             foreach (Boot boot in dbBoot.GetAllBoot())
             {
                 lbBudgetBoten.Items.Add(boot);
-                if(boot.GetType() == typeof(Motor))
+                lbContractBoot.Items.Add(boot);
+                if (boot.GetType() == typeof(Motor))
                     cbActieRadiusBoten.Items.Add(boot);
             }
             foreach (Artikel artikel in dbArtikel.GetAllArtikel())
             {
                 lbBudgetArtikelen.Items.Add(artikel);
+                lbContractArtikel.Items.Add(artikel);
             }
         }
 
@@ -84,7 +88,7 @@ namespace LP2016MyronAntonissen
 
         private void btnGetRadius_Click(object sender, EventArgs e)
         {
-            Motor boot = (Motor)cbActieRadiusBoten.SelectedItem;
+            Motor boot = (Motor) cbActieRadiusBoten.SelectedItem;
             lblActieRadiusResult.Text = boot.ActieRadius.ToString() + " km";
         }
 
@@ -102,7 +106,7 @@ namespace LP2016MyronAntonissen
         {
             if (lbBudgetBotenHuur.SelectedItem != null)
             {
-                Boot selectedBoot = (Boot)lbBudgetBotenHuur.SelectedItem;
+                Boot selectedBoot = (Boot) lbBudgetBotenHuur.SelectedItem;
                 lbBudgetBoten.Items.Add(selectedBoot);
                 lbBudgetBotenHuur.Items.Remove(selectedBoot);
             }
@@ -112,7 +116,7 @@ namespace LP2016MyronAntonissen
         {
             if (lbBudgetArtikelen.SelectedItem != null)
             {
-                Artikel selectedArtikel = (Artikel)lbBudgetArtikelen.SelectedItem;
+                Artikel selectedArtikel = (Artikel) lbBudgetArtikelen.SelectedItem;
                 lbBudgetArtikelenHuur.Items.Add(selectedArtikel);
                 lbBudgetArtikelen.Items.Remove(selectedArtikel);
             }
@@ -120,9 +124,9 @@ namespace LP2016MyronAntonissen
 
         private void btnBudgetArtikelAf_Click(object sender, EventArgs e)
         {
-            if(lbBudgetArtikelenHuur.SelectedItem != null)
+            if (lbBudgetArtikelenHuur.SelectedItem != null)
             {
-                Artikel selectedArtikel = (Artikel)lbBudgetArtikelenHuur.SelectedItem;
+                Artikel selectedArtikel = (Artikel) lbBudgetArtikelenHuur.SelectedItem;
                 lbBudgetArtikelen.Items.Add(selectedArtikel);
                 lbBudgetArtikelenHuur.Items.Remove(selectedArtikel);
             }
@@ -136,6 +140,7 @@ namespace LP2016MyronAntonissen
             double.TryParse(tbBudgetBerekenen.Text.Trim(), out budget);
             if (budget > 0)
             {
+                string water = cbBudgetWater.Text;
                 List<Boot> bootHuurLijst = new List<Boot>();
                 foreach (var boot in lbBudgetBotenHuur.Items)
                 {
@@ -146,13 +151,113 @@ namespace LP2016MyronAntonissen
                 {
                     artikelHuurLijst.Add((Artikel) artikel);
                 }
-                Budget.BerekenAantalMeren(budget, bootHuurLijst, artikelHuurLijst, )
+                int aantalmeren = Budget.BerekenAantalMeren(budget, bootHuurLijst, artikelHuurLijst, water);
+                lbBudgetTehuren.Text = aantalmeren.ToString();
             }
             else
             {
                 MessageBox.Show("Vul een waarde in die voldoet aan [nn.nn]");
             }
 
+        }
+
+        private void tpMedewerker_Enter(object sender, EventArgs e)
+        {
+            if (LoggedInUser.GetType() == typeof(Verhuurder))
+            {
+                foreach (Huurcontract contract in ((Verhuurder) LoggedInUser).AlleContracten())
+                {
+                    lbHuurcontracten.Items.Add(contract);
+                }
+                foreach (Klant klant in ((Verhuurder) LoggedInUser).AlleKlanten())
+                {
+                    cbHuurContractKlant.Items.Add(klant);
+                }
+            }
+        }
+
+        private void btnNieuweKlant_Click(object sender, EventArgs e)
+        {
+            string naam = tbNKlantNaam.Text;
+            string email = tbNKlantEmail.Text;
+            if (naam.Trim() != "" && email.Trim() != "")
+            {
+                if (LoggedInUser.GetType() == typeof(Verhuurder))
+                {
+                    Klant klant = ((Verhuurder) LoggedInUser).NieuweKlant(naam, email);
+                    if (klant != null)
+                    {
+                        cbHuurContractKlant.Items.Add(klant);
+                        tbNKlantNaam.Clear();
+                        tbNKlantEmail.Clear();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fout bij toevoegen.");
+                    }
+                }
+            }
+        }
+
+        private void btnContractBootBij_Click(object sender, EventArgs e)
+        {
+            if (lbContractBoot.SelectedItem != null)
+            {
+                Boot selectedBoot = (Boot) lbContractBoot.SelectedItem;
+                lbContractBootHuur.Items.Add(selectedBoot);
+                lbContractBoot.Items.Remove(selectedBoot);
+            }
+        }
+
+        private void btnContractBootAf_Click(object sender, EventArgs e)
+        {
+            if (lbContractBootHuur.SelectedItem != null)
+            {
+                Boot selectedBoot = (Boot) lbContractBootHuur.SelectedItem;
+                lbContractBoot.Items.Add(selectedBoot);
+                lbContractBootHuur.Items.Remove(selectedBoot);
+            }
+        }
+
+        private void btnContractArtikelBij_Click(object sender, EventArgs e)
+        {
+            if (lbContractArtikel.SelectedItem != null)
+            {
+                Artikel selectedArtikel = (Artikel) lbContractArtikel.SelectedItem;
+                lbContractArtikelHuur.Items.Add(selectedArtikel);
+                lbContractArtikel.Items.Remove(selectedArtikel);
+            }
+        }
+
+        private void btnContractArtikelAf_Click(object sender, EventArgs e)
+        {
+            if (lbContractArtikelHuur.SelectedItem != null)
+            {
+                Artikel selectedArtikel = (Artikel) lbContractArtikelHuur.SelectedItem;
+                lbContractArtikel.Items.Add(selectedArtikel);
+                lbContractArtikelHuur.Items.Remove(selectedArtikel);
+            }
+        }
+
+        private void btnHuurContractNew_Click(object sender, EventArgs e)
+        {
+            if (cbHuurContractKlant.Text != "" && dtpVan.Value < dtpTot.Value)
+            {
+                if (LoggedInUser.GetType() == typeof(Verhuurder))
+                {
+                    List<Boot> boten = lbContractBootHuur.SelectedItems.Cast<Boot>().ToList();
+                    List<Artikel> artikels = lbContractArtikelHuur.SelectedItems.Cast<Artikel>().ToList();
+                    Huurcontract contract = ((Verhuurder) LoggedInUser).NieuwContract(dtpVan.Value, dtpTot.Value,
+                        (Klant) cbHuurContractKlant.SelectedItem, boten, artikels);
+                    lbHuurcontracten.Items.Add(contract);
+                }
+            }
+        }
+
+        private void btnExporteer_Click(object sender, EventArgs e)
+        {
+            ((Huurcontract) lbHuurcontracten.SelectedItem).ExportContract();
         }
     }
 }
